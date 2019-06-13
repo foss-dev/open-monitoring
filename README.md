@@ -70,4 +70,4 @@ git commit -m "System users and installed apps changed"
 - You're responsible for your commits. If someone opens an issue about your commit, try to solve.
 - Try to write tests for your changes.
 - Try to add changelog entry for your changes.
-- Try to write document for your codes.
+- Try to write a document for your codes.
