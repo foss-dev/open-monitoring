@@ -2,3 +2,5 @@
 
 - Flask CORS added
 - config file added
+- **.gitignore** file added
+- models added
