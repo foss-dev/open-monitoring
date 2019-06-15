@@ -23,6 +23,14 @@ config = {
 
 
 def configure_app(app):
-    """ App configuration will be here. """
+    """ 
+        App configuration will be here. 
+        
+        Parameters
+        ----------
+
+        app : Flask
+            app instance
+    """
 
     app.config.from_object(config['development'])
