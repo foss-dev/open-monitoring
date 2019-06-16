@@ -1,5 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
+from om_core import app
 
+# We didn't pass app instance here.
 db = SQLAlchemy()
 
 class User(db.Model):
