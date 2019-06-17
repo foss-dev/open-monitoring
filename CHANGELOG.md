@@ -1,3 +1,8 @@
+### 17.06.2019
+
+- User API layer added
+- User blueprint registered
+
 ### 16.06.2019
 
 - om_run.py file's name changed as app.py
