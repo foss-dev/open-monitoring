@@ -8,3 +8,28 @@ user = Blueprint('user', __name__)
 def get_users():
 
     return jsonify({ "message": "Hi user :)"})
+
+@user.route('/<int:id>', methods=['GET'])
+def users(id):
+
+    return jsonify({ "id": id })
+
+@user.route('/login/<int:id>', methods=['POST'])
+def login(id):
+
+    return jsonify({ "id": id })
+
+@user.route('/register/<int:id>', methods=['POST'])
+def register(id):
+
+    return jsonify({ "id": id })
+
+@user.route('/update/<int:id>', methods=['PUT'])
+def update(id):
+
+    return jsonify({ "id": id })
+
+@user.route('/remove/<int:id>', methods=['DELETE'])
+def delete(id):
+
+    return jsonify({ "id": id })
