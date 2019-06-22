@@ -1,3 +1,7 @@
+### 22.06.2019
+
+- User login, register, update and remove endpoints added [https://github.com/foss-dev/open-monitoring/issues/6](https://github.com/foss-dev/open-monitoring/issues/6)
+
 ### 17.06.2019
 
 - User API layer added
