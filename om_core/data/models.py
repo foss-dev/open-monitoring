@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from om_core import app
+from om_core import create_app
 
 # We didn't pass app instance here.
 db = SQLAlchemy()
