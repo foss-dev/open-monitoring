@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, current_app
 
 from om_core.data.models import db, User
 
@@ -7,7 +7,7 @@ user = Blueprint('user', __name__)
 @user.route('/', methods=['GET'])
 def get_users():
 
-    return jsonify({ "message": "Hi user :)"})
+    return jsonify({ "hello": "user" })
 
 @user.route('/<int:id>', methods=['GET'])
 def users(id):

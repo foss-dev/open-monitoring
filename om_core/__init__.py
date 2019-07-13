@@ -1,24 +1,35 @@
+import os
+
 from flask import Flask
 from flask_cors import CORS
-
+from dotenv import load_dotenv
 
 from config import BaseConfig
-from config import configure_app
 
-app = Flask(__name__)
+APP_ROOT = os.path.join(os.path.dirname(__file__))
+dotenv_path = os.path.join(APP_ROOT, '.env')
+load_dotenv(dotenv_path)
 
-from om_core.api.user.controllers import user
+def create_app(environment):
+    app = Flask(__name__)
 
-""" Corst settings will be here. We maybe use this endpoint later. """
-cors = CORS(app, resources={
-    r'/api/*': {
-        'origins': BaseConfig.ORIGINS
-    }
-})
+    env = os.getenv("ENV")
 
-configure_app(app)
+    app.config.from_object(environment.get(env))
 
-app.url_map.strict_slashes = False
+    from om_core.api.user.controllers import user
+
+    """ Cors settings will be here. We maybe use this endpoint later. """
+    cors = CORS(app, resources={
+        r'/api/*': {
+            'origins': BaseConfig.ORIGINS
+        }
+    })
 
 
-app.register_blueprint(user, url_prefix='/api/users')
+    app.url_map.strict_slashes = False
+
+
+    app.register_blueprint(user, url_prefix='/api/users')
+
+    return app
